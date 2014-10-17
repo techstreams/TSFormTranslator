@@ -1,0 +1,157 @@
+<!-- 
+* Copyright 2014 Laura Taylor
+* (https://github.com/techstreams/TSFormTranslator)
+*
+* Licensed under the Apache License, Version 2.0 (the "License"); 
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+-->
+<? var showTranslation = true; ?>
+<? var langColor = 'red'; ?>
+<? var responseStr = 'Response'; ?>
+<? if (meta.fromCode == meta.toCode) { ?>
+<? showTranslation = false; ?>
+<? langColor = 'blue'; ?>
+<? } else { ?>
+<? responseStr = LanguageApp.translate('Response', meta.toCode, meta.fromCode); ?>
+<? } ?>
+<div>
+<table cellpadding="0" cellspacing="0" border="0" align="center" style="border-collapse:collapse;line-height:100%!important;margin:0;padding:0;width:100%!important">
+<tr>
+<td valign="top" height="20"> </td>
+</tr>
+<tr>
+<td valign="top">
+<table cellpadding="0" cellspacing="0" border="0" align="center" style="border-collapse:collapse;border-radius:3px;color:#545454;font-family:&#39;Helvetica Neue&#39;,Arial,sans-serif;font-size:13px;line-height:20px;margin:0 auto;width:100%">
+<tr>
+<td valign="top">
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:3px 3px 0 0;border:1px solid #1d1717;font-size:1px;height:3px;line-height:3px;width:100%">
+<tr>
+<td valign="top" style="background:#333333;border-top-color:#414141;border-top-style:solid;border-top-width:1px;font-family:&#39;Helvetica Neue&#39;,Arial,sans-serif" bgcolor="#333333"> 
+</td>
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-color:#8c8c8c;border-radius:0 0 3px 3px;border-style:solid;border-width:0 1px 1px;width:100%">
+<tr>
+<td valign="top" style="border-radius:0 0 3px 3px;color:#545454;font-family:&#39;Helvetica Neue&#39;,Arial,sans-serif;font-size:13px;line-height:20px;padding:15px 30px 15px">
+<div>
+<h2>Form Submission</h2>
+<? if (showTranslation) { ?>
+<p>The following submission was made through the form:&nbsp;&nbsp;<strong><a href="<?!= meta.url ?>"><?= LanguageApp.translate(meta.title, meta.fromCode, meta.toCode) ?></a></strong> <em>(<?!= meta.title ?>)</em></p>
+<? } else { ?>
+<p>The following submission was made through the form:&nbsp;&nbsp;<strong><a href="<?!= meta.url ?>"><?= meta.title ?></a></strong></p>
+<? } ?>
+<p>The form was submitted in:&nbsp;&nbsp;<strong><em><?!= meta.lang ?></em></strong></p>
+<? if (meta.submitter) { ?>
+  <p><strong>Submission By: </strong><?!= meta.submitter ?></p>
+<? } ?>
+<hr>
+<br>
+<? meta.response.forEach(function(item, index){ ?>
+   <? if (item.response) { ?>
+      <? var dateArray, duration; ?>
+      <? if (showTranslation) { ?>
+      <h3><strong><?= LanguageApp.translate(item.title, meta.fromCode, meta.toCode) ?></strong>&nbsp;<em>(<?= item.title ?>)</em>:</h3>
+      <? } else { ?>
+      <h3><strong><?= item.title ?>:</strong></h3>
+      <? } ?>
+      <div style="padding: 2px 15px; color: #00000; font-size: 90%; background-color: #FFFACD; border-radius: 8px;">
+      <? if (item.type == 'checkbox') {?>
+      <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong></p>
+      <? item.response.forEach(function(option) { ?>
+      <p style="color:<?= langColor?>;"><em>-&nbsp;<?= option ?></em></p>
+      <? }); ?>
+      <? if (showTranslation) { ?>
+      <br>
+      <p style="color:blue;"><strong>English:</strong></p>
+      <? item.response.forEach(function(option) { ?>
+      <p  style="color:blue;"><em>-&nbsp;<?= LanguageApp.translate(option, meta.fromCode, meta.toCode) ?></em></p>
+      <? }); ?>
+      <? } ?>
+      <? } else if (item.type == 'date') { ?>
+      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= item.response ?></em></p>
+      <? } else if (item.type == 'datetime') { ?>
+      <? dateArray = item.response.split(" "); ?>
+      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= dateArray.shift() + "   @   " + getPrettyTime(dateArray.pop()) ?></em></p>  
+      <? } else if (item.type == 'duration') { ?>
+      <? duration = getPrettyDuration(item.response) ?>
+      <? if (duration != '') { ?>
+      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= duration ?></em></p>
+      <? } else { ?>
+      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em>No duration specified</em></p>
+      <? } ?> 
+      <? } else if (item.type == 'grid') { ?>
+      <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong></p>
+      <? item.rows.forEach(function(row, i) { ?>
+      <? if (item.response[i]) { ?>
+      <p style="color:<?= langColor?>;"><em>-&nbsp;<?= row ?>&nbsp;(&nbsp;<strong><?= item.response[i] ?></strong>&nbsp;)</em></p>
+      <? } else { ?>
+      <p style="color:<?= langColor?>;"><em>-&nbsp;<?= row ?>&nbsp;(&nbsp;<strong>-----</strong>&nbsp;)</em></p>
+      <? } ?>
+      <? }) ?>
+      <? if (showTranslation) { ?>
+      <p style="color:blue;"><strong>English:</strong></p>
+      <? item.rows.forEach(function(row, j) { ?>
+      <? if (item.response[j]) { ?>
+      <p style="color:blue;"><em>-&nbsp;<?= LanguageApp.translate(row, meta.fromCode, meta.toCode) ?>&nbsp;(&nbsp;<strong><?= LanguageApp.translate(item.response[j], meta.fromCode, meta.toCode) ?></strong>&nbsp;)</em></p>
+      <? } else { ?>
+      <p style="color:blue;"><em>-&nbsp;<?= LanguageApp.translate(row, meta.fromCode, meta.toCode) ?>&nbsp;(&nbsp;<strong>-----</strong>&nbsp;)</em></p>
+      <? } ?>
+      <? }) ?>
+      <? } ?>
+      <? } else if (item.type == 'paragraph') { ?>
+      <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong></p> 
+      <p style="color:<?= langColor?>;"><em><?!= HtmlService.createHtmlOutput().appendUntrusted(item.response).getContent().replace(/\n/g, '<br>'); ?></em></p>
+      <? if (showTranslation) { ?>
+      <br>
+      <p style="color:blue;"><strong>English:</strong></p>
+      <p style="color:blue;"><em><?!= HtmlService.createHtmlOutput().appendUntrusted(LanguageApp.translate(item.response, meta.fromCode, meta.toCode)).getContent().replace(/\n/g, '<br>'); ?></em></p>
+      <? } ?>
+      <? } else if (item.type == 'scale') { ?>
+      <? var s = item.scale; ?>
+      <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong>&nbsp;&nbsp;<em><?= s.lowerlabel + " (" + s.lowerbound + ") ...   " ?></em><strong><?= " " + responseStr + " (" + item.response + ')' ?></strong>&nbsp;&nbsp;<em><?= "   ... " + s.upperlabel + " (" + s.upperbound + ")" ?></em></p>
+      <? if (showTranslation) { ?>
+      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(s.lowerlabel, meta.fromCode, meta.toCode) + " (" + s.lowerbound + ") ...   " ?></em><strong><?= " Response (" + LanguageApp.translate(item.response, meta.fromCode, meta.toCode) + ')' ?></strong>&nbsp;&nbsp;<em><?= "   ... " +  LanguageApp.translate(s.upperlabel, meta.fromCode, meta.toCode) + " (" + s.upperbound + ")" ?></em></p>
+      <? } ?>
+      <? } else if (item.type == 'time') { ?>
+      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= getPrettyTime(item.response) ?></em></p>  
+      <? } else if (item.type = 'text') { ?>
+      <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong>&nbsp;&nbsp;<em><?= item.response ?></em></p>
+      <? if (showTranslation) { ?>
+      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(item.response, meta.fromCode, meta.toCode) ?></em></p>
+      <? } ?>
+      <? } else { ?>
+      <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong>:&nbsp;&nbsp;<em><?= item.response ?></em></p> 
+      <? if (showTranslation) { ?>
+      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(item.response, meta.fromCode, meta.toCode) ?></em></p>
+      <? } ?>
+      <? } ?>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <? } ?>
+<? }) ?>
+<p style="font-size:90%;"><em>Email generated with <a href="http://techstreams.github.io/TSFormTranslator">TSFormTranslator</a></em></p>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" height="20"> </td>
+</tr>
+</table>
+</div>

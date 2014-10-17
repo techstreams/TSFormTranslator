@@ -1,0 +1,79 @@
+<script>
+
+/*
+* Copyright 2014 Laura Taylor
+* (https://github.com/techstreams/TSFormTranslator)
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+ */
+
+(function(jQuery) {
+  var $;
+  $ = jQuery;
+  $(document).ready(function() {
+    if ($("#translate").val() != 'English') {
+      $("select").prop('disabled', 'disabled');
+      $("#translateeng").prop('checked', 'checked').removeProp('disabled');
+      $("#translatetext").prop('disabled', 'disabled').next().html('Set Form language - ' + $("#translate").val());
+      $("#translateblock").show();
+      $("#translateengblock").show(); 
+    } else {
+      $("#translatetext").prop('checked', 'checked').next().html('Set Form language - <strong><em>' + $("select").val() + '</em></strong>');
+      $("#translateeng").prop('disabled', 'disabled');
+    }
+    $( "select" ).change(function(e) {
+       var lang = $(this).val();
+       var current = $("#currentlang").val();
+       if(lang != current) {
+           $("#translatetext").next().html('Set Form Language - <strong><em>' + lang + '</em></strong>');
+           $("#translateblock").show();
+       }
+    });
+    $( "button").click(function(e) {
+      var $btn = $(this);
+      $("div#alert").show();
+      $("form").hide();
+      google.script.run
+        .withSuccessHandler(function(translateLang){
+           $("#translate").val(translateLang);
+           if ($("#translate").val() != 'English') {     
+              $("select").prop('disabled', 'disabled');
+              $("#translateeng").prop('checked', 'checked').prop('disabled', '');
+              $("#translatetext").prop('checked', '')
+                                 .prop('disabled', 'disabled')
+                                 .next().html('Set Form Language - <strong><em>' + $("#translate").val() + '</em></strong>');
+              $("div.alert").fadeOut(2000, function() {
+                 $("form").show();
+              });
+
+           } else {
+              $("select").prop('disabled', '');
+              $("#translateeng").prop('checked', '').prop('disabled', 'disabled');
+              $("#translatetext").prop('checked', 'checked')
+                                 .prop('disabled', '')
+                                 .next().html('Set Form Language - <strong><em>' + $("select").val() + '</em></strong>');
+              $("div.alert").fadeOut(2000, function(){
+                 $("form").show();
+              });
+           }         
+        })
+        .withFailureHandler()
+        .translate(this.parentNode.parentNode);
+
+     e.preventDefault();
+    })
+  });
+})(jQuery);
+
+
+</script>
