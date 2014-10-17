@@ -2,7 +2,7 @@
 
 > TSFormTranslator is a demonstration [Google Apps Script](https://www.google.com/script/start/) which enables a *[Google Form](https://support.google.com/docs/topic/6063584) owner* to translate a form ***created in English*** into ***one of 79 different languages*** using [Google Translate](https://translate.google.com/). *( For a list of supported languages, see the [TSFormTranslator documentation](http://techstreams.github.io/TSFormTranslator#langs). )*
 >
-> Once the form has been translated and [shared](https://support.google.com/docs/answer/2839588), *form users* can submit responses in the *** form's language***.
+> Once the form has been translated and [shared](https://support.google.com/docs/answer/2839588), *form users* can submit responses in the ***form's language***.
 >
 > A nicely formatted email containing the submitted content will be sent to the *form owner* in both the ***form language*** and ***English translation*** each time a *form user* submits to the form.
 
