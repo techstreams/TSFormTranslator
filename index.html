@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+	<title>TSFormTranslator</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/github-markdown.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<article class="markdown-body">
+	<p><i class="fa fa-bullhorn"></i> <a href="#about">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-wrench"></i> <a href="#install">Install</a>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-paper-plane-o"></i> <a href="#start">Getting Started</a>&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-exclamation-circle"></i> <a href="#important">Important Notes</a></p>
+<hr>
+<p><a id="about" name="about" href="#"></a></p>
+<h1><i class="fa fa-bullhorn"></i> TSFormTranslator</h1>
+<blockquote>
+<p>TSFormTranslator is a demonstration <a href="https://www.google.com/script/start/" target="_blank">Google Apps Script</a> which enables a <em><a href="https://support.google.com/docs/topic/6063584" target="_blank">Google Form</a> owner</em> to translate a form <strong><em>created in English</em></strong> into <strong><em><a href="#langs">one of 79 different languages</a></em></strong> using <a href="https://translate.google.com/" target="_blank">Google Translate</a>.<sup><i class="fa fa-asterisk"></i><i class="fa fa-asterisk"></i></sup></p>
+<p>Once the form has been translated and <a href="https://support.google.com/docs/answer/2839588" target="_blank">shared</a>, <em>form users</em> can submit responses in the <strong><em> form&#39;s language</em></strong>.</p>
+<p>A nicely formatted email containing the submitted content will be sent to the <em>form owner</em> in both the <strong><em>form language</em></strong> and <strong><em>English translation</em></strong> each time a <em>form user</em> submits to the form.</p>
+<p><i class="fa fa-github"></i> <a href="https://github.com/techstreams/TSFormTranslator">Project on Github</a></p>
+<p><br>
+<span class="red"><sup><i class="fa fa-asterisk"><i class="fa fa-asterisk"></i></i></sup>  <em>If you and your form users are using a browser such as <a href="https://www.google.com/intl/en-US/chrome/browser/" target="_blank"><strong>Chrome</strong></a> (which already supports translation), you may be interested in <a href="http://techstreams.github.io/TSContactForm" target="_blank"><strong>TSContactForm</strong></a> instead.</em></span></p>
+</blockquote>
+<p><br></p>
+<p><strong><em>For example, the following image shows a simple <a href="https://support.google.com/docs/topic/6063584" target="_blank">Google Form</a> created in English</em></strong></p>
+<p><br>
+<img src="img/form1.png" alt="picture"></p>
+<p><br>
+<br></p>
+<p><strong><em>... translated to Afrikaans via TSFormTranslator</em></strong></p>
+<p><br>
+<img src="img/form2.png" alt="picture"></p>
+<p><br>
+<br></p>
+<p><strong><em>... and an email form submission generated and sent to the form owner by TSFormTranslator</em></strong></p>
+<p><br>
+<img src="img/email.png" alt="picture"></p>
+<p><br></p>
+<p><a id="langs" name="langs" href="#"></a></p>
+<h4><i class="fa fa-comments"></i> Supported Languages</h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Language</th>
+<th>Language</th>
+<th>Language</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Afrikaans</td>
+<td>Dutch</td>
+<td>Hungarian</td>
+<td>Malay</td>
+<td>Somali</td>
+</tr>
+<tr>
+<td>Albanian</td>
+<td>Esperanto</td>
+<td>Icelandic</td>
+<td>Maltese</td>
+<td>Spanish</td>
+</tr>
+<tr>
+<td>Arabic</td>
+<td>Estonian</td>
+<td>Igbo</td>
+<td>Maori</td>
+<td>Swahili</td>
+</tr>
+<tr>
+<td>Armenian</td>
+<td>Filipino</td>
+<td>Indonesian</td>
+<td>Marathi</td>
+<td>Swedish</td>
+</tr>
+<tr>
+<td>Azerbaijani</td>
+<td>Finnish</td>
+<td>Irish</td>
+<td>Mongolian</td>
+<td>Tamil</td>
+</tr>
+<tr>
+<td>Basque</td>
+<td>French</td>
+<td>Italian</td>
+<td>Nepali</td>
+<td>Telugu</td>
+</tr>
+<tr>
+<td>Belarusian</td>
+<td>Galician</td>
+<td>Japanese</td>
+<td>Norwegian</td>
+<td>Thai</td>
+</tr>
+<tr>
+<td>Bengali</td>
+<td>Georgian</td>
+<td>Javanese</td>
+<td>Persian</td>
+<td>Turkish</td>
+</tr>
+<tr>
+<td>Bosnian</td>
+<td>German</td>
+<td>Kannada</td>
+<td>Polish</td>
+<td>Ukrainian</td>
+</tr>
+<tr>
+<td>Bulgarian</td>
+<td>Greek</td>
+<td>Khmer</td>
+<td>Portuaguese</td>
+<td>Urdu</td>
+</tr>
+<tr>
+<td>Catalan</td>
+<td>Gujarati</td>
+<td>Korean</td>
+<td>Punjabi</td>
+<td>Vietnamese</td>
+</tr>
+<tr>
+<td>Cebuano</td>
+<td>Haitian Creole</td>
+<td>Lao</td>
+<td>Romanian</td>
+<td>Welsh</td>
+</tr>
+<tr>
+<td>Chinese</td>
+<td>Hausa</td>
+<td>Latin</td>
+<td>Russian</td>
+<td>Yiddish</td>
+</tr>
+<tr>
+<td>Croatian</td>
+<td>Hebrew</td>
+<td>Latvian</td>
+<td>Serbian</td>
+<td>Yoruba</td>
+</tr>
+<tr>
+<td>Czech</td>
+<td>Hindi</td>
+<td>Lithuanian</td>
+<td>Slovak</td>
+<td>Zulu</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>Hmong</td>
+<td>Macendonian</td>
+<td>Slovenian</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<hr>
+
+	<p><a id="install" name="install" href="#"></a></p>
+<h2><i class="fa fa-wrench"></i> Installation</h2>
+<blockquote>
+<p>There are <strong><em>two methods</em></strong> available for installing <em>TSFormTranslator</em>.  </p>
+</blockquote>
+
+	<div class="tabs">
+	    <ul class="tab-links" role="tablist">
+	        <li class="active" aria-controls="panel1" role="tab"><a href="#methodtab1"><i class="fa fa-dot-circle-o"></i> Method 1</a></li>
+	        <li aria-controls="panel2" role="tab"><a href="#methodtab2"><i class="fa fa-dot-circle-o"></i> Method 2</a></li>
+	    </ul>
+	    <hr class="divider">
+	    <div class="tab-content">
+	        <div id="methodtab1" class="tab active instructions" aria-labeledby="methodtab1" role="tabpanel">
+	            <h4>Method 1: Easy Install with TSScriptCopy</h4>
+<p>TSScriptCopy is an application which <strong><em>automates the process of copying files to your Google Drive.</em></strong></p>
+<p class="red"><em><i class="fa fa-exclamation-circle"></i> TSScriptCopy and its use are licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License, Version 2.0</a></em></p>
+
+<button><i class="fa fa-plus-circle"></i> Click for Instructions</button>
+
+<div id="test" class="hidden"><br>
+<hr class="divider">
+
+Follow these instructions to install the <strong><em>TSFormTranslator script and host form</em></strong> into your Google Drive with <strong>TSScriptCopy</strong>:<br>
+<br>
+
+<strong><i class="fa  fa-chevron-right"></i> STEP 1:</strong> Login to your <a href="http://drive.google.com/" target="_blank">Google Drive</a><br>
+<br>
+
+<strong><i class="fa  fa-chevron-right"></i> STEP 2:</strong> Click <a href="https://script.google.com/macros/s/AKfycbyvyOdWanBy-3ovr_YirIK9gNR-EYkpdYtbROPi7qgrpABO7H09/exec" target="_blank">TSScriptCopy</a> to access. <strong><em>Wait for the application to load...</em></strong><br>
+<br>
+
+<em>(If you have not run TSScriptCopy before, you will be prompted to perform a <strong>one-time authorization</strong> to allow the application to copy scripts and host documents to your Google Drive.)</em><br>
+<br>
+
+<img src="img/auth1.png" alt="authorization">
+<br>
+<img src="img/auth2.png" alt="authorization"><br>
+<br>
+<br>
+
+<strong><i class="fa  fa-chevron-right"></i> Step 3:</strong> When the TSScriptCopy page displays in your browser, locate the <strong><em>TSFormTranslator Copy to Drive</em></strong> button and click to install<br>
+<br>
+
+<img src="img/copy.png" alt="copy"><br>
+<br>
+<br>
+
+<strong><i class="fa  fa-chevron-right"></i> Step 4:</strong> Wait for TSScriptCopy to copy the <strong>TSFormTranslator script and host form</strong> to your Google Drive. <em>The copy process may take a minute to run...</em><br>
+<br>
+
+
+<img src="img/wait.png" alt="wait"><br>
+<br>
+<br>
+
+
+<strong><i class="fa  fa-chevron-right"></i> Step 5:</strong> Access and open the <strong>TSFormTranslator host form</strong> by clicking the link in the resulting notification message.<br>
+<br>
+
+<img src="img/notification.png" alt="notification"><br>
+<br>
+
+<em>(Click the <strong>Close</strong> link to close the notification...or <strong>exist TSScriptCopy</strong> by closing the associated browser window.)</em>
+
+<br>
+<br>
+
+<strong><i class="fa  fa-chevron-right"></i> Step 6:</strong> To use the script, see the <a href="#start">Getting Started</a> section below.
+
+<br>
+<br>
+
+</div>
+
+
+
+
+	        </div>
+	 
+	        <div id="methodtab2" class="tab instructions" aria-labeledby="methodtab2" role="tabpanel">
+                <h4>Method 2: Manual Installation</h4>
+<p>See the <a href="https://github.com/techstreams/TSFormTranslator" target="_blank">TSFormTranslator project on Github</a> for code and manual install instructions.</p>
+
+	        </div>
+	    </div>
+	</div>
+	<hr>
+<p><a id="start" name="start" href="#"></a></p>
+<h2><i class="fa fa-paper-plane-o"></i> Getting Started</h2>
+<blockquote>
+<p>Get started with <em>TSFormTranslator</em> in <em>four</em> easy steps:</p>
+</blockquote>
+
+	<div class="tabs">
+	    <ul class="tab-links" role="tablist">
+	        <li class="active" aria-controls="panel1" role="tab"><a href="#steptab1"><i class="fa fa-dot-circle-o"></i> Step 1</a></li>
+	        <li aria-controls="panel2" role="tab"><a href="#steptab2"><i class="fa fa-dot-circle-o"></i> Step 2</a></li>
+	        <li aria-controls="panel3" role="tab"><a href="#steptab3"><i class="fa fa-dot-circle-o"></i> Step 3</a></li>
+	        <li aria-controls="panel4" role="tab"><a href="#steptab4"><i class="fa fa-dot-circle-o"></i> Step 4</a></li>
+	        <li aria-controls="panel5" role="tab"><a href="#steptab5"><i class="fa fa-dot-circle-o"></i> Optional</a></li>
+	    </ul>
+	    <hr class="divider">
+	    <div class="tab-content">
+	        <div id="steptab1" class="tab active instructions" aria-labeledby="steptab1" role="tabpanel">
+	            <h4>Step 1: Create the form</h4>
+<p><i class="fa  fa-chevron-right"></i> <em>If not already open</em>, locate and open the form created during <strong><a href="#install">installation</a></strong>.</p>
+<p><i class="fa  fa-chevron-right"></i> Create or modify the form as needed...<em>see the <a href="https://support.google.com/docs/answer/2839737" target="_blank"><strong>documentation</strong></a> for more information.</em>  </p>
+<ul>
+<li><a href="https://support.google.com/docs/answer/145737" target="_blank"><strong>Theme</strong></a></li>
+<li>Title</li>
+<li>Description</li>
+<li>Form Elements</li>
+<li>Confirmation message</li>
+</ul>
+<p align="center"><a class="next" href="#steptab2"><strong>NEXT</strong> <i class="fa fa-angle-double-right"></i></a></p>
+	        </div>
+	 
+	        <div id="steptab2" class="tab instructions" aria-labeledby="steptab2" role="tabpanel">
+                <h4>Step 2: Open the sidebar</h4>
+<p><i class="fa  fa-chevron-right"></i> Select the <strong><em>TSFormTranslator &gt; Open sidebar</em></strong> menu option.  </p>
+<p><img src="img/open.png" alt="live form">  </p>
+<p class="red"><p class="red"><i class="fa fa-exclamation-circle"></i> <strong>NOTE:</strong> <em>If you have not run TSFormTranslator before, you will be prompted to perform a <strong>one-time authorization</strong> to allow the script access. Follow the prompts and click <strong>Continue</strong> and <strong>Accept</strong> to authorize.</em></p>
+
+<p><i class="fa  fa-chevron-right"></i> <em><strong>Wait for the sidebar</strong> to display...</em>  </p>
+<p align="center"><a class="prev" href="#steptab1"><i class="fa fa-angle-double-left"></i> <strong>PREV</strong></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class="next" href="#steptab3"><strong>NEXT</strong> <i class="fa fa-angle-double-right"></i></a></p>
+
+	        </div>
+
+	        <div id="steptab3" class="tab instructions" aria-labeledby="steptab3" role="tabpanel">
+	            <h4>Step 3: Translate the form</h4>
+<p><i class="fa  fa-chevron-right"></i>  From the sidebar, select the <strong><em>translation language <sup>(1)</sup></em></strong> from the <em>drop down list</em> and click the <strong><em>Set form language <sup>(2)</sup></em></strong> button to translate the form into the selected language.</p>
+<p><img src="img/translate.png" alt="live form">  </p>
+<p><i class="fa  fa-chevron-right"></i> <em><strong>Wait for TSFormTranslator to complete the translation.</strong>  This process may take a minute or two...</em>  </p>
+<p class="red"><em><i class="fa fa-exclamation-circle"></i> <strong>IMPORTANT NOTES:</strong></em></p>
+
+<ul>
+    <li><span class="red"><a href="https://translate.google.com/" target="_blank">Google Translate</a> is used to translate form elements.   Some <em>English words and phrases may not translate as expected</em> in all languages.</span></li>
+    <li><span class="red">Some built-in Google Form text <em>will not</em> be translated by TSFormTranslator.</span></li>
+    <li><span class="red"><a href="https://support.google.com/docs/answer/141062" target="_blank">Form Page Navigation</a> <em>will no longer work</em> after form translation.</span></li>
+    <li><span class="red">Time, date and duration form field submissions will only show in English in the sent email.</span></li>
+    <li><span class="red">Some languages may only be viewable in browsers such as <a href="https://www.google.com/intl/en-US/chrome/browser/" target="_blank"><strong>Chrome</strong></a>.</span></li>
+</ul>  
+
+<p><br></p>
+<p align="center"><a class="prev" href="#steptab2"><i class="fa fa-angle-double-left"></i> <strong>PREV</strong></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class="next" href="#steptab4"><strong>NEXT</strong> <i class="fa fa-angle-double-right"></i></a></p>
+
+
+	        </div>
+	       	<div id="steptab4" class="tab instructions" aria-labeledby="steptab4" role="tabpanel">
+	            <h4>Step 4: Publish the form</h4>
+<p><i class="fa  fa-chevron-right"></i> View the <strong><em>live form</em></strong> by clicking the <strong>View live form</strong> button on the form toolbar.  </p>
+<p><img src="img/liveform.png" alt="live form">  </p>
+<p><em><strong>The form is now ready to share with others</strong>...see the <strong><a href="https://support.google.com/docs/answer/2839588" target="_blank">form sharing documentation</a></strong> for more information.</em></p>
+<hr class="divider">  
+
+<h4><i class="fa fa-exclamation-triangle"></i> GOOGLE APPS USERS</h4>
+<button><i class="fa fa-plus-circle"></i> Click for More Options</button>
+
+<div class="step hidden"> 
+
+<hr class="divider">
+
+<i class="fa  fa-chevron-right"></i> To publish the form, <strong><em>uncheck</em></strong> the <strong><em>Require login to view this form</em></strong> box under the <em>form settings</em> and click <strong>OK</strong> on the following prompt.<br>
+<br>
+
+<img src="img/publish.png" alt="live form"><br>
+<br>
+
+
+<i class="fa fa-arrow-right"></i> <em><strong>If you want to keep the form accessible only within your Google Apps domain</strong>...leave the <strong>Require login to view this form</strong> checked under the form settings</em><br>
+<br>
+
+<img src="img/requirelogin.png" alt="live form"><br>
+<br>
+
+
+<i class="fa fa-arrow-right"></i> <em><strong>If you want to keep the form accessible only within your Google Apps domain AND collect the respondent’s username</strong>...check the <strong>Automatically collect respondent’s username</strong> box under the form settings. The form submission email will contain the respondent’s username in addition to the form submission content.</em><br>
+<br>
+
+<img src="img/autocollect.png" alt="live form"> 
+
+</div> 
+
+<p align="center"><a class="prev" href="#steptab3"><i class="fa fa-angle-double-left"></i> <strong>PREV</strong></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a class="next" href="#steptab5"><strong>NEXT</strong> <i class="fa fa-angle-double-right"></i></a></p>
+
+	        </div>
+	       	<div id="steptab5" class="tab instructions" aria-labeledby="steptab5" role="tabpanel">
+	            <h4><i class="fa fa-question-circle"></i> Want to Reuse the Form in a Different Language?</h4>
+<button><i class="fa fa-plus-circle"></i> Click for Instructions</button>
+
+<div class="step hidden"> 
+
+<br>
+
+<strong><em>TSFormTranslator allows a Google Form to be reused but the form must be translated back to English before being translated into a new language.</em></strong><br>
+<br>
+
+To translate the form back to English:<br>
+<br>
+
+<i class="fa  fa-chevron-right"></i> With the TSFormTranslator sidebar open, ensure that the <strong>Set form back to English <sup>(1)</sup></strong> option is checked.  Click the <strong>Set form language <sup>(2)</sup></strong> button.<br>
+<br>
+
+<img src="img/english.png" alt="live form"><br>
+<br>
+
+<p class="red"><em><i class="fa fa-exclamation-circle"></i> <em>NOTE:  Because TSFormTranslator is using <a href="https://translate.google.com/" target="_blank">Google Translate</a> to translate the form back to English, the original English text may be altered.  Check the form for needed translation correction before translating to a new language.</em></em></p>
+
+<p class="red"><em><i class="fa fa-exclamation-circle"></i> <em>NOTE:  When reusing a form, it may be helpful to clear the previous responses.  Follow <a href="https://support.google.com/docs/answer/2923993" target="_blank">these instructions</a> to clear the responses from the form.</em></em></p><br>
+</div>
+
+<hr class="divider">  
+
+<h4><i class="fa fa-question-circle"></i> Want to Reset the Form Completely?</h4>
+<button><i class="fa fa-plus-circle"></i> Click for Instructions</button>
+
+<div class="step hidden"> 
+
+<br>
+
+To completely reset the form and remove all the form elements:<br>
+<br>
+
+<i class="fa  fa-chevron-right"></i> Select the <strong><em>TSFormTranslator &gt; Clear form</em></strong> menu option.<br>
+<br>
+
+<img src="img/english.png" alt="live form"><br>
+<br>
+
+<p class="red"><em><i class="fa fa-exclamation-circle"></i> <strong>CAUTION:</strong>  This will clear ALL form elements from the form. Use with care!</em></p>
+
+<p class="red"><em><i class="fa fa-exclamation-circle"></i> <strong>NOTE:</strong>  If you clear the form, remember to <strong>close and reopen the sidebar</strong> to get the latest changes.</em></p>
+
+</div> 
+
+<p align="center"><a class="prev" href="#steptab4"><i class="fa fa-angle-double-left"></i> <strong>PREV</strong></a></p>
+
+	        </div>
+	    </div>
+	</div>
+	<hr>
+<p><a id="about" name="important" href="#"></a></p>
+<h2><i class="fa fa-exclamation-circle"></i> Important Notes About TSFormTranslator</h2>
+<ul>
+<li><p>TSFormTranslator uses <strong><a href="https://translate.google.com/" target="_blank">Google Translate</a></strong> to translate form elements.   Some <em>English words and phrases</em> <strong><em>may not translate as expected</em></strong> in all languages.  </p>
+</li>
+<li><p>Some <em>built-in</em> Google Form text <strong><em>will not</em></strong> be translated by TSFormTranslator.</p>
+</li>
+<li><p>Some translation languages may only be viewable in browsers such as <a href="https://www.google.com/intl/en-US/chrome/browser/" target="_blank">Chrome</a>.</p>
+</li>
+<li><p><strong><em><a href="https://support.google.com/docs/answer/141062" target="_blank">Form Page Navigation</a> will no longer work</em></strong> after form translation.</p>
+</li>
+<li><p>Time, date and duration form field submissions will only show in English in the sent email.</p>
+</li>
+<li><p>Google Apps Scripts are subject to daily quota limits including the number of emails sent and the Trigger Aggregate Execution Time.   See the <em>Quota Limits</em> tab of the <a href="https://docs.google.com/macros/dashboard" target="_blank">Google Apps Script Dashboard</a> for more information.</p>
+</li>
+<li><p>TSFormTranslator may not be appropriate for high traffic forms, especially in cases where the form owner consistently receives quota limit exceeded notifications.  </p>
+</li>
+</ul>
+<p><br></p>
+
+	<hr>
+    
+	    <p>&copy; 2014 <a href="https://techstreams.github.io" target="_blank">Laura Taylor</a>&nbsp;&nbsp;|&nbsp;&nbsp;Released under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" target="_blank">Apache License, Version 2.0</a></p> 
+        <p class="smaller">Documentation:  Built with <a href="http://harpjs.com" target="_blank">Harp</a>.&nbsp;&nbsp;|&nbsp;&nbsp;Hosted on <a href="https://pages.github.com/" target="_blank">Github Pages</a>.<br><em>Last Updated: Fri Oct 17 2014</em></p>
+	
+</article>
+<script src="js/main.js"></script>
+</body>
+</html>
