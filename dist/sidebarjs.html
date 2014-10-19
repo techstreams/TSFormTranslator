@@ -67,7 +67,9 @@
               });
            }         
         })
-        .withFailureHandler()
+        .withFailureHandler(function(error){
+          alert(error.message);
+        })
         .translate(this.parentNode.parentNode);
 
      e.preventDefault();

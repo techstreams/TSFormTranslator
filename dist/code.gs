@@ -94,13 +94,12 @@ function about() {
  * Convert form text to selected translation language
  */
 function translate(formObject) {
-  var tsmt;
-  try {
-    tsmt = new TSFormTranslator(FormApp.getActiveForm()).translateText(formObject);
-  } catch(error) {
-
+  
+  try { 
+      return new TSFormTranslator(FormApp.getActiveForm()).translateText(formObject); 
+  } catch(e) {
+      throw new Error('The following error occurred while trying to translate the form.  Please run the "TSFormTranslator > Clear form" menu option to reset the form. \n\n' + e);
   }
-  return tsmt;
 };
 
 /*
