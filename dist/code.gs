@@ -52,7 +52,7 @@ function openSidebar() {
 
 /*
  * Process form response
- * @param {object} form submit trigger event
+ * @param {Object} form submit trigger event
  */
 function checkResponses(e) {
   var form, tscf;
@@ -106,8 +106,8 @@ function translate(formObject) {
 
 /*
  * Get time in pretty format
- * @param {string} time string in format hh:mm
- * @return {string} time string in pretty format
+ * @param {String} time string in format hh:mm
+ * @return {String} time string in pretty format
  */
 function getPrettyTime(time) {
   var t;
@@ -125,8 +125,8 @@ function getPrettyTime(time) {
 
 /*
  * Get duration in pretty format
- * @param {string} duration string in format hh:mm:ss
- * @return {string} duration string in pretty format
+ * @param {String} duration string in format hh:mm:ss
+ * @return {String} duration string in pretty format
  */
 function getPrettyDuration(time) {
   var duration, t;
@@ -163,10 +163,10 @@ function getPrettyDuration(time) {
 
     /*
     * @constructor
-    * @param {object} form object
-    * @param {object} form response object
-    * @param {string} email template name
-    * @param {string} email subject line
+    * @param {Object} form object
+    * @param {Object} form response object
+    * @param {String} email template name
+    * @param {String} email subject line
     * @return {TSFormTranslator} this object for chaining
      */
     function TSFormTranslator(form, formResponse, email, subjectline) {
@@ -211,7 +211,7 @@ function getPrettyDuration(time) {
 
     /*
       * Get languages
-      * @return {object} an object of language codes
+      * @return {Object} an object of language codes
      */
 
     TSFormTranslator.prototype.getLangs = function() {
@@ -337,7 +337,7 @@ function getPrettyDuration(time) {
 
     /*
     * Set a form trigger for processing form responses
-    * @param {string} function name to be run on trigger
+    * @param {String} function name to be run on trigger
     * @return {TSFormTranslator} this object for chaining
      */
 
@@ -427,8 +427,8 @@ function getPrettyDuration(time) {
 
     /*
     * Get form response item type
-    * @param {object} form response item type
-    * @return {string} type of form object
+    * @param {Object} form response item type
+    * @return {String} type of form object
     * @private
      */
 
