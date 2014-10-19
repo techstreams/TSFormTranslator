@@ -97,7 +97,6 @@
   var tsmt;
   try {
     tsmt = new TSFormTranslator(FormApp.getActiveForm()).translateText(formObject);
- //   FormApp.getUi().alert('Form text has been translated to ' + formObject.translatelang + '.');
   } catch(error) {
 
   }
