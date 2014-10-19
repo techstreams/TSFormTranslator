@@ -76,8 +76,8 @@
     result = ui.alert('Clear Form', 'Remove all form elements?', ui.ButtonSet.OK_CANCEL);
     if (result == ui.Button.OK) {
       tsft = new TSFormTranslator(FormApp.getActiveForm()).clear();
+      ui.alert('Clear Form', 'All form elements have been removed.', ui.ButtonSet.OK);
     }
-    ui.alert('Clear Form', 'All form elements have been removed.', ui.ButtonSet.OK);
   } catch (e) {
     ui.alert('Clear Form', 'TSFormTranslator encountered an error while clearing the form.  Please try again later.', ui.ButtonSet.OK);
   }
