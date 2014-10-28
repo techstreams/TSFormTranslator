@@ -32,7 +32,7 @@
  * Open TSFormTranslator sidebar
 ###
 `function openSidebar() {
-  var html, key, langs, tsft, ui;
+  var html, langs, tsft, ui;
 
   ui = FormApp.getUi();
   try {
@@ -40,9 +40,9 @@
     tsft.setFormTrigger('checkResponses').setDocProperties();
 
     langs = tsft.getLangs();
-    var html = HtmlService.createTemplateFromFile('sidebar');
+    html = HtmlService.createTemplateFromFile('sidebar');
     html.langs = langs;
-    FormApp.getUi().showSidebar(html.evaluate().setTitle('TSFormTranslator'));
+    ui.showSidebar(html.evaluate().setTitle('TSFormTranslator'));
   }  catch (e) {
     ui.alert('Clear Form', 'TSFormTranslator encountered an error while trying to open the sidebar.  Please try again later.', ui.ButtonSet.OK);
   }
@@ -69,7 +69,7 @@
  * Delete all items in form
 ###
 `function clearForm() {
-  var config, result, tsft, ui;
+  var result, tsft, ui;
   
   ui = FormApp.getUi();
   try {
