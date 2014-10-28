@@ -16,6 +16,7 @@
 -->
 <? var showTranslation = true; ?>
 <? var langColor = 'red'; ?>
+<? var engColor = 'blue'; ?>
 <? var responseStr = 'Response'; ?>
 <? if (meta.fromCode == meta.toCode) { ?>
 <? showTranslation = false; ?>
@@ -71,22 +72,22 @@
       <? }); ?>
       <? if (showTranslation) { ?>
       <br>
-      <p style="color:blue;"><strong>English:</strong></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong></p>
       <? item.response.forEach(function(option) { ?>
-      <p  style="color:blue;"><em>-&nbsp;<?= LanguageApp.translate(option, meta.fromCode, meta.toCode) ?></em></p>
+      <p  style="color:<?= engColor?>;"><em>-&nbsp;<?= LanguageApp.translate(option, meta.fromCode, meta.toCode) ?></em></p>
       <? }); ?>
       <? } ?>
       <? } else if (item.type == 'date') { ?>
-      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= item.response ?></em></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong>&nbsp;&nbsp;<em><?= item.response ?></em></p>
       <? } else if (item.type == 'datetime') { ?>
       <? dateArray = item.response.split(" "); ?>
-      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= dateArray.shift() + "   @   " + getPrettyTime(dateArray.pop()) ?></em></p>  
+      <p style="color:<?= engColor?>;"><strong>English:</strong>&nbsp;&nbsp;<em><?= dateArray.shift() + "   @   " + getPrettyTime(dateArray.pop()) ?></em></p>  
       <? } else if (item.type == 'duration') { ?>
       <? duration = getPrettyDuration(item.response) ?>
       <? if (duration != '') { ?>
-      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= duration ?></em></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong>&nbsp;&nbsp;<em><?= duration ?></em></p>
       <? } else { ?>
-      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em>No duration specified</em></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong>&nbsp;&nbsp;<em>No duration specified</em></p>
       <? } ?> 
       <? } else if (item.type == 'grid') { ?>
       <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong></p>
@@ -98,12 +99,12 @@
       <? } ?>
       <? }) ?>
       <? if (showTranslation) { ?>
-      <p style="color:blue;"><strong>English:</strong></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong></p>
       <? item.rows.forEach(function(row, j) { ?>
       <? if (item.response[j]) { ?>
-      <p style="color:blue;"><em>-&nbsp;<?= LanguageApp.translate(row, meta.fromCode, meta.toCode) ?>&nbsp;(&nbsp;<strong><?= LanguageApp.translate(item.response[j], meta.fromCode, meta.toCode) ?></strong>&nbsp;)</em></p>
+      <p style="color:<?= engColor?>;"><em>-&nbsp;<?= LanguageApp.translate(row, meta.fromCode, meta.toCode) ?>&nbsp;(&nbsp;<strong><?= LanguageApp.translate(item.response[j], meta.fromCode, meta.toCode) ?></strong>&nbsp;)</em></p>
       <? } else { ?>
-      <p style="color:blue;"><em>-&nbsp;<?= LanguageApp.translate(row, meta.fromCode, meta.toCode) ?>&nbsp;(&nbsp;<strong>-----</strong>&nbsp;)</em></p>
+      <p style="color:<?= engColor?>;"><em>-&nbsp;<?= LanguageApp.translate(row, meta.fromCode, meta.toCode) ?>&nbsp;(&nbsp;<strong>-----</strong>&nbsp;)</em></p>
       <? } ?>
       <? }) ?>
       <? } ?>
@@ -112,26 +113,26 @@
       <p style="color:<?= langColor?>;"><em><?!= HtmlService.createHtmlOutput().appendUntrusted(item.response).getContent().replace(/\n/g, '<br>'); ?></em></p>
       <? if (showTranslation) { ?>
       <br>
-      <p style="color:blue;"><strong>English:</strong></p>
-      <p style="color:blue;"><em><?!= HtmlService.createHtmlOutput().appendUntrusted(LanguageApp.translate(item.response, meta.fromCode, meta.toCode)).getContent().replace(/\n/g, '<br>'); ?></em></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong></p>
+      <p style="color:<?= engColor?>;"><em><?!= HtmlService.createHtmlOutput().appendUntrusted(LanguageApp.translate(item.response, meta.fromCode, meta.toCode)).getContent().replace(/\n/g, '<br>'); ?></em></p>
       <? } ?>
       <? } else if (item.type == 'scale') { ?>
       <? var s = item.scale; ?>
       <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong>&nbsp;&nbsp;<em><?= s.lowerlabel + " (" + s.lowerbound + ") ...   " ?></em><strong><?= " " + responseStr + " (" + item.response + ')' ?></strong>&nbsp;&nbsp;<em><?= "   ... " + s.upperlabel + " (" + s.upperbound + ")" ?></em></p>
       <? if (showTranslation) { ?>
-      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(s.lowerlabel, meta.fromCode, meta.toCode) + " (" + s.lowerbound + ") ...   " ?></em><strong><?= " Response (" + LanguageApp.translate(item.response, meta.fromCode, meta.toCode) + ')' ?></strong>&nbsp;&nbsp;<em><?= "   ... " +  LanguageApp.translate(s.upperlabel, meta.fromCode, meta.toCode) + " (" + s.upperbound + ")" ?></em></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(s.lowerlabel, meta.fromCode, meta.toCode) + " (" + s.lowerbound + ") ...   " ?></em><strong><?= " Response (" + LanguageApp.translate(item.response, meta.fromCode, meta.toCode) + ')' ?></strong>&nbsp;&nbsp;<em><?= "   ... " +  LanguageApp.translate(s.upperlabel, meta.fromCode, meta.toCode) + " (" + s.upperbound + ")" ?></em></p>
       <? } ?>
       <? } else if (item.type == 'time') { ?>
-      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= getPrettyTime(item.response) ?></em></p>  
+      <p style="color:<?= engColor?>;"><strong>English:</strong>&nbsp;&nbsp;<em><?= getPrettyTime(item.response) ?></em></p>  
       <? } else if (item.type = 'text') { ?>
       <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong>&nbsp;&nbsp;<em><?= item.response ?></em></p>
       <? if (showTranslation) { ?>
-      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(item.response, meta.fromCode, meta.toCode) ?></em></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(item.response, meta.fromCode, meta.toCode) ?></em></p>
       <? } ?>
       <? } else { ?>
       <p style="color:<?= langColor?>;"><strong><?!= meta.lang ?>:</strong>:&nbsp;&nbsp;<em><?= item.response ?></em></p> 
       <? if (showTranslation) { ?>
-      <p style="color:blue;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(item.response, meta.fromCode, meta.toCode) ?></em></p>
+      <p style="color:<?= engColor?>;"><strong>English:</strong>&nbsp;&nbsp;<em><?= LanguageApp.translate(item.response, meta.fromCode, meta.toCode) ?></em></p>
       <? } ?>
       <? } ?>
       </div>
