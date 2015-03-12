@@ -2,7 +2,7 @@
 
 **Version 0.1.2 (2015-03-11)**
 
-* Update to use IFRAME mode for about page and sidebar
+* Update to IFRAME mode for about page and sidebar 
 
 **Version 0.1.1 (2014-10-19)**
 
