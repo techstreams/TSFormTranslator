@@ -42,7 +42,7 @@
     langs = tsft.getLangs();
     html = HtmlService.createTemplateFromFile('sidebar');
     html.langs = langs;
-    ui.showSidebar(html.evaluate().setTitle('TSFormTranslator'));
+    ui.showSidebar(html.evaluate().setSandboxMode(HtmlService.SandboxMode.IFRAME).setTitle('TSFormTranslator'));
   }  catch (e) {
     ui.alert('Clear Form', 'TSFormTranslator encountered an error while trying to open the sidebar.  Please try again later.', ui.ButtonSet.OK);
   }
@@ -87,7 +87,7 @@
  * Show About Information
 ###
 `function about() {
-  FormApp.getUi().showModelessDialog(HtmlService.createHtmlOutputFromFile('about'), ' ');
+  FormApp.getUi().showModelessDialog(HtmlService.createHtmlOutputFromFile('about').setSandboxMode(HtmlService.SandboxMode.IFRAME), ' ');
 }`
 
 ###
