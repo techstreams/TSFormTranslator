@@ -1,13 +1,13 @@
 #  TSFormTranslator
 
-> TSFormTranslator is a demonstration [Google Apps Script](https://www.google.com/script/start/) which enables a *[Google Form](https://support.google.com/docs/topic/6063584) owner* to translate a form ***created in English*** into ***one of 79 different languages*** using [Google Translate](https://translate.google.com/). *( For a list of supported languages, see the [TSFormTranslator documentation](http://techstreams.github.io/TSFormTranslator#langs). )*
+> TSFormTranslator is a demonstration [Google Apps Script](https://www.google.com/script/start/) which enables a *[Google Form](https://support.google.com/docs/topic/6063584) owner* to translate a form ***created in English*** into ***one of 79 different languages*** using [Google Translate](https://translate.google.com/). *( For a list of supported languages, see the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator#langs). )*
 >
 > Once the form has been translated and [shared](https://support.google.com/docs/answer/2839588), *form users* can submit responses in the ***form's language***.
 >
 > A nicely formatted email containing the submitted content will be sent to the *form owner* in both the ***form language*** and ***English translation*** each time a *form user* submits to the form.
 
 
-`**` *NOTE:  If you and your form users are using a browser such as [Chrome](https://www.google.com/intl/en-US/chrome/browser/) (which already supports translation), you may be interested in [TSContactForm](http://techstreams.github.io/TSContactForm)</a> instead.*
+`**` *NOTE:  If you and your form users are using a browser such as [Chrome](https://www.google.com/intl/en-US/chrome/browser/) (which already supports translation), you may be interested in [TSContactForm](https://techstreams.github.io/TSContactForm)</a> instead.*
 
 
 ---
@@ -19,7 +19,7 @@
 
 #### Method #1:  TSScriptCopy Application Install
 
-See the [TSFormTranslator documentation](http://techstreams.github.io/TSFormTranslator) for TSScriptCopy installation instructions.
+See the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator) for TSScriptCopy installation instructions.
 
 *NOTE: The TSScriptCopy application is licensed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)*  
 
@@ -27,7 +27,7 @@ See the [TSFormTranslator documentation](http://techstreams.github.io/TSFormTran
 
 #### Method #2:  Manual Install
 
-* Login to your [Google Drive](http://drive.google.com)
+* Login to your [Google Drive](https://drive.google.com)
 
 * Create a [Google Form](https://support.google.com/docs/topic/6063584)
 
@@ -50,7 +50,7 @@ See the [TSFormTranslator documentation](http://techstreams.github.io/TSFormTran
 
 * Close the script editor and reload the form in your browser
 
-* To use the script, see the [TSFormTranslator documentation](http://techstreams.github.io/TSFormTranslator)  
+* To use the script, see the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator)  
 
 
 ---
@@ -58,7 +58,7 @@ See the [TSFormTranslator documentation](http://techstreams.github.io/TSFormTran
 
 ## Usage
 
-See the [TSFormTranslator documentation](http://techstreams.github.io/TSFormTranslator)
+See the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator)
 
 **Important Usage Notes:**
 
