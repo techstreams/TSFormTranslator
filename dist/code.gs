@@ -1,6 +1,6 @@
 
 /*
-* Copyright 2014 Laura Taylor
+* Copyright Laura Taylor
 * (https://github.com/techstreams/TSFormTranslator)
 *
 * Licensed under the Apache License, Version 2.0 (the "License");

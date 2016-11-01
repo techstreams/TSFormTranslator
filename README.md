@@ -17,11 +17,9 @@
 > There are **two** methods available for installing TSFormTranslator.  
 
 
-#### Method #1:  TSScriptCopy Application Install
+#### Method #1:  Make a Copy of the Google Form
 
-See the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator) for TSScriptCopy installation instructions.
-
-*NOTE: The TSScriptCopy application is licensed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)*  
+See the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator) for form copy instructions.
 
 
 
@@ -137,7 +135,7 @@ You can find gulp tasks in the [gulpfile](gulpfile.coffee).
 
 ## License
 
-Copyright 2014 [Laura Taylor](https://github.com/techstreams)
+Copyright [Laura Taylor](https://github.com/techstreams)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use the files except in compliance with the License.
