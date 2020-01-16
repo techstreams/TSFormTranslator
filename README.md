@@ -14,7 +14,7 @@
 
 ## Install
 
-Follow these instructions to install the TSFormTranslator script and host form into your Google Drive:
+Follow these instructions to install the **TSFormTranslator** script and host form into your Google Drive:
 
 * Login to your [Google Drive](https://drive.google.com/).
 
