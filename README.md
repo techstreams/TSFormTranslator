@@ -14,41 +14,13 @@
 
 ## Install
 
-> There are **two** methods available for installing TSFormTranslator.  
+Follow these instructions to install the TSFormTranslator script and host form into your Google Drive:
 
+* Login to your [Google Drive](https://drive.google.com/).
 
-#### Method #1:  Make a Copy of the Google Form
+* Access the [TSFormTranslator form](https://techstreams.page.link/TSFormTranslator).
 
-See the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator) for form copy instructions.
-
-
-
-#### Method #2:  Manual Install
-
-* Login to your [Google Drive](https://drive.google.com)
-
-* Create a [Google Form](https://support.google.com/docs/topic/6063584)
-
-* Create a form project following [these instructions](https://developers.google.com/apps-script/managing_projects#creatingSpreadsheet)
-
-* Add the following files from the **[dist/](./dist)** directory to the form project:
-
-  * [code.gs](dist/code.gs)
-  * [email.html](dist/email.html)
-  * [sidebar.html](dist/sidebar.html)
-  * [sidebarcss.html](dist/sidebarcss.html)
-  * [sidebarjs.html](dist/sidebarjs.html)
-  * [about.html](dist/about.html)
-
-  NOTES:
-
-  There should already be a file named `Code.gs` in your form project when you first create it.  Replace the contents of that file with the contents of the [dist/code.gs](dist/code.gs) file and save.
-
-  When creating form project files for [*.html](dist), be sure to select the ***File > New > Html*** menu option from the script editor.  Enter the associated file name ( e.g. `email`, `sidebar`, ... ) but omit the `.html` suffix as it will automatically be added when the file is created.  Replace the created project file content with the respective html file content *(e.g. [dist/email.html](dist/email.html), [dist/sidebar.html](dist/sidebar.html), ... )* and save.
-
-* Close the script editor and reload the form in your browser
-
-* To use the script, see the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator)  
+* Click the ***Use Template*** button. This will copy the form to your Google Drive.
 
 
 ---
