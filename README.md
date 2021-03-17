@@ -1,5 +1,12 @@
 #  TSFormTranslator
 
+*If you enjoy my [Google Workspace Apps Script](https://developers.google.com/apps-script) work, please consider buying me a cup of coffee!* 
+
+
+[![](https://techstreams.github.io/images/bmac.svg)](https://www.buymeacoffee.com/techstreams)
+
+---
+
 > TSFormTranslator is a demonstration [Google Apps Script](https://www.google.com/script/start/) which enables a *[Google Form](https://support.google.com/docs/topic/6063584) owner* to translate a form ***created in English*** into ***one of 79 different languages*** using [Google Translate](https://translate.google.com/). *( For a list of supported languages, see the [TSFormTranslator documentation](https://techstreams.github.io/TSFormTranslator#langs). )*
 >
 > Once the form has been translated and [shared](https://support.google.com/docs/answer/2839588), *form users* can submit responses in the ***form's language***.
